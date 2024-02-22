@@ -32,7 +32,7 @@ services:
    - ./distrib/script/install.sh:/install.sh:ro
    - ./distrib/sql/scheduler.sql:/scheduler.sql:ro
    - ./distrib/sql/goip.sql:/goip.sql:ro
-   - ./distrib/sql/asterisk.sql:/asterisk.sql:ro
+     #   - ./distrib/sql/asterisk.sql:/asterisk.sql:ro
   entrypoint: [ "/install.sh"]
   # entrypoint: ["echo", "Service install disabled"]
 
@@ -58,6 +58,8 @@ services:
    - ${GOIPCRONPORT}:${GOIPCRONPORT}/udp
   volumes:
    - ./distrib/script/goip_start.sh:/goip_start.sh:ro
+     #   - ./distrib/bin/goipcron_x64:/usr/local/bin/goipcron_x64:ro
+   - ./distrib/bin:/usr/local/bin:ro
   # tty: true
   # stdin_open: true
   entrypoint: [ "/goip_start.sh"]
@@ -84,6 +86,7 @@ services:
    - ${SMB_SCHED_UDP}:${SMB_SCHED_UDP}/udp
    - ${SMB_SCHED_TCP}:${SMB_SCHED_TCP}/tcp
   volumes:
+   - ./distrib/bin/smb_scheduler:/usr/local/bin/smb_scheduler:ro
    - ./distrib/script/smb_start.sh:/smb_start.sh:ro
   # tty: true
   # stdin_open: true
@@ -111,6 +114,8 @@ services:
   #  - ${SMB_XCHANGE_SMBMSVR_UDP}:${SMB_XCHANGE_SMBMSVR_UDP}/udp
   #  - ${SMB_XCHANGE_PHPSVR_UDP}:${SMB_XCHANGE_PHPSVR_UDP}/udp
   volumes:
+
+   - ./distrib/bin/xchanged:/usr/local/bin/xchanged:ro
    - ./distrib/script/xchanged_start.sh:/xchanged_start.sh:ro
   # tty: true
   # stdin_open: true
@@ -126,6 +131,7 @@ services:
   hostname: ${RADM_NAME}
   volumes:
    - ./distrib/script/radm_start.sh:/radm_start.sh:ro
+   - ./distrib/bin/radmsrvd:/usr/local/bin/radmsrvd:rw
   env_file: 
    - ./.env
    - ./security/radmin.env
@@ -134,10 +140,10 @@ services:
   ports:
    - ${RADM_RADM_WEBPORT}:${RADM_RADM_WEBPORT}/tcp
    - ${RADM_CLIPORT}:${RADM_CLIPORT}/tcp
-  # volumes:
-  #  - ./distrib/script/radm_start.sh:/radm_start.sh:ro
-  # tty: true
-  # stdin_open: true
+     # volumes:
+     #- ./distrib/script/radm_start.sh:/radm_start.sh:ro
+  tty: true
+  stdin_open: true
   entrypoint: ["/radm_start.sh"]
 
  db:
@@ -160,7 +166,7 @@ services:
   env_file:
    - ./.env
    - ./security/db.env
-   - ./security/asterisk.env
+     #   - ./security/asterisk.env
   networks:
    goipnet:
     ipv4_address: ${WWW_DOCKER_LOCALNET_IP}
@@ -170,29 +176,31 @@ services:
   ports:
    - ${WEB_EXT_PORT}:80/tcp
   volumes:
-   - ./www:/mnt/www:ro
+    #  - ./www:/mnt/www:ro
+   - ./www:/var/www/html:ro
+   - ./logs:/var/log/apache2:rw
    - ./distrib/script/web_start.sh:/web_start.sh:ro
   image: athimel/apache2-php5-mysql
   entrypoint: ["/web_start.sh"]
 
- asterisk:
-  env_file:
-   - ./.env
-   - ./security/db.env
-   - ./security/asterisk.env
-  networks:
-   goipnet:
-    ipv4_address: ${ASTERISK_DOCKER_LOCALNET_IP}
-  hostname: ${ASTERISK_NAME}
-  container_name: ${ASTERISK_NAME}
+    # asterisk:
+    #  env_file:
+    #   - ./.env
+    #   - ./security/db.env
+    #   - ./security/asterisk.env
+    #  networks:
+    #   goipnet:
+    #    ipv4_address: ${ASTERISK_DOCKER_LOCALNET_IP}
+    #  hostname: ${ASTERISK_NAME}
+    #  container_name: ${ASTERISK_NAME}
   # restart: always
-  ports:
-   - ${ASTERISK_EXT_PORT}:${ASTERISK_EXT_PORT}/udp
-  volumes:
-   - ./config/asterisk:/mnt/asterisk:ro
-   - ./distrib/lib/odbc:/lib/odbc:ro
-   - ./distrib/script/asterisk_start.sh:/asterisk_start.sh:ro
-   - ./sounds/asterisk/:/sounds/
-  image: ${ASTERISK_IMAGE}
-  entrypoint: ["/asterisk_start.sh"]
+  #  ports:
+    #   - ${ASTERISK_EXT_PORT}:${ASTERISK_EXT_PORT}/udp
+    #  volumes:
+    #   - ./config/asterisk:/mnt/asterisk:ro
+    #   - ./distrib/lib/odbc:/lib/odbc:ro
+    #   - ./distrib/script/asterisk_start.sh:/asterisk_start.sh:ro
+    #   - ./sounds/asterisk/:/sounds/
+    #  image: ${ASTERISK_IMAGE}
+    #  entrypoint: ["/asterisk_start.sh"]
 
