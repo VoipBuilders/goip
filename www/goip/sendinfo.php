@@ -72,20 +72,18 @@ if($_GET['id']) {
 	if($_SESSION['goip_permissions'] > 1 && $row0['userid']!=$_SESSION[goip_userid])
 		die("没有权限~");
 	$query=$db->query("(SELECT receiver . * ,sends . * ,  '-' as goipname,prov.prov
-FROM sends left join receiver on receiver.id = sends.recvid, message, prov
+FROM sends left join receiver on receiver.id = sends.recvid left join prov on prov.id=sends.provider, message
 WHERE message.id =$_GET[id]                                                                                       
 AND sends.messageid = message.id                                                                                  
 AND sends.over=0                                                                                                  
-and prov.id=sends.provider                                                                                        
 )                                                                                                                 
 union (                                                                                                           
 SELECT receiver.*,sends . * ,  goip.name AS goipname,prov.prov                                                    
-FROM sends left join receiver on receiver.id = sends.recvid, message, goip, prov
+FROM sends left join receiver on receiver.id = sends.recvid left join prov on prov.id=sends.provider, message, goip
 WHERE message.id =$_GET[id]                                                                                       
 AND sends.messageid = message.id                                                                                  
 AND goip.id = sends.goipid                                                                                        
 and sends.over=1                                                                                                  
-and prov.id=sends.provider  
 ) LIMIT $start_limit,$perpage");
 	
 	$sendc=0;

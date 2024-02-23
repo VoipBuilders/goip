@@ -40,5 +40,5 @@ $post_data = array(
   'PASSWORD' => $rs[1]
 
 );   
-send_post("http://$goipdocker/dosend.php", $post_data);   
+send_post("http://127.0.0.1/dosend.php", $post_data);   
 ?>

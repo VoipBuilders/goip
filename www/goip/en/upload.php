@@ -106,7 +106,7 @@ if ( $_POST["action"]=="mingsenupload")
 	$attachment=$_FILES["img1"]['tmp_name'];
 	
 	//$db_uploadmaxsize='5120000';
-	$db_uploadfiletype='txt cfg';
+	$db_uploadfiletype='xls csv';
 	$attachdir="../upload";
 
 	if(!$attachment || $attachment== 'none'){
@@ -124,9 +124,9 @@ if ( $_POST["action"]=="mingsenupload")
 	$available_type = explode(' ',trim($db_uploadfiletype));
 	$attach_ext = substr(strrchr($attach_name,'.'),1);
 	$attach_ext=strtolower($attach_ext);
-//	if($attach_ext == 'php' || empty($attach_ext) || !@in_array($attach_ext,$available_type)){
-//		showerror('對不起，您上傳的文件類型已被系統禁止！');
-//	}
+	if($attach_ext == 'php' || empty($attach_ext) || !@in_array($attach_ext,$available_type)){
+		WriteErrMsg('The type of file you uploaded has been banned!');
+	}
 	$randvar=num_rand('15');
 	$uploadname=$randvar.'.'.$attach_ext;
 

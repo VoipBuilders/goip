@@ -18,7 +18,7 @@ function sendto_cron()
 				echo "socket_create() failed: reason: " . socket_strerror($socket) . "\n";
 				exit;
 			}
-			if (socket_sendto($socket,"goip", 4, 0, $goipdocker, $goipcronport)===false)
+			if (socket_sendto($socket,"goip", 4, 0, "127.0.0.1", $goipcronport)===false)
 				echo ("sendto error");
 			for($i=0;$i<3;$i++){
 				$read=array($socket);

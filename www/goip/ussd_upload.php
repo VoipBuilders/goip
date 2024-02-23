@@ -162,7 +162,7 @@ function ussd_send(&$send)
 			$buf="START $send[recvid] $send[host] $send[port]\n";
 			//echo $buf;
 			//echo $send[goipname];
-			if (@socket_sendto($send[socket],$buf, strlen($buf), 0, $goipdocker, $port)===false){
+			if (@socket_sendto($send[socket],$buf, strlen($buf), 0, "127.0.0.1", $port)===false){
 				$errormsg = "ERROR sendto error:".socket_strerror($socket) . "\n";
 				error_over($send[goipname], $send[cmd], $errormsg);
 			}
@@ -171,7 +171,7 @@ function ussd_send(&$send)
 			$buf="USSD $send[recvid] $send[password] $send[cmd]";
 			//echo $buf;
 			//echo $send[goipname];
-			if (@socket_sendto($send[socket],$buf, strlen($buf), 0, $goipdocker, $port)===false){
+			if (@socket_sendto($send[socket],$buf, strlen($buf), 0, "127.0.0.1", $port)===false){
 				$errormsg = "ERROR sendto error".socket_strerror($socket) . "\n";
 				error_over($send[goipname], $send[cmd], $errormsg);
 			}
@@ -219,7 +219,7 @@ if ( $_POST["action"]=="mingsenupload")
 	$attachment=$_FILES["img1"]['tmp_name'];
 	
 	$db_uploadmaxsize='5120000';
-	$db_uploadfiletype='txt cfg';
+	$db_uploadfiletype='xls csv';
 	$attachdir="upload";
 
 	if(!$attachment || $attachment== 'none'){
@@ -236,9 +236,9 @@ if ( $_POST["action"]=="mingsenupload")
 	$available_type = explode(' ',trim($db_uploadfiletype));
 	$attach_ext = substr(strrchr($attach_name,'.'),1);
 	$attach_ext=strtolower($attach_ext);
-//	if($attach_ext == 'php' || empty($attach_ext) || !@in_array($attach_ext,$available_type)){
-//		showerror('对不起，您上传的文件类型已被系统禁止！');
-//	}
+	if($attach_ext == 'php' || empty($attach_ext) || !@in_array($attach_ext,$available_type)){
+		WriteErrMsg('对不起，您上传的文件类型已被系统禁止！');
+	}
 	$randvar=num_rand('15');
 	$uploadname=$randvar.'.'.$attach_ext;
 

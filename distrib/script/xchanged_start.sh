@@ -15,9 +15,9 @@ echo "
 \$smbdocker='${XCHANGED_DOCKER_LOCALNET_IP}';
 
 \$checksum=0x56781234;
-\$version='V1.9';
-\$bdate='Build 201712';
-\$vflag='112';
+\$version="V1.21";
+\$bdate="Build 202106";
+\$vflag="114";
 
 define('__FOR_ARM__', 1);
 define('TYPE_SIM', 1);

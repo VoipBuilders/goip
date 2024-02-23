@@ -1,0 +1,14 @@
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.12. Set the 'ServerName' directive globally to suppress this message
+[Thu Feb 22 14:53:31.333866 2024] [mpm_prefork:notice] [pid 11] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Thu Feb 22 14:53:31.333964 2024] [core:notice] [pid 11] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Thu Feb 22 14:53:55.866506 2024] [:error] [pid 13] [client 192.168.0.71:57912] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/html/smb/inc/conn.inc.php on line 79
+[Thu Feb 22 14:53:59.204078 2024] [:error] [pid 14] [client 192.168.0.71:57916] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/html/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/
+[Thu Feb 22 14:53:59.452147 2024] [:error] [pid 15] [client 192.168.0.71:57919] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/html/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Feb 22 14:53:59.631394 2024] [:error] [pid 14] [client 192.168.0.71:57916] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/html/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.12. Set the 'ServerName' directive globally to suppress this message
+[Fri Feb 23 11:42:47.819845 2024] [core:warn] [pid 10] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Feb 23 11:42:47.822817 2024] [mpm_prefork:notice] [pid 10] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Fri Feb 23 11:42:47.822864 2024] [core:notice] [pid 10] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.12. Set the 'ServerName' directive globally to suppress this message
+[Fri Feb 23 11:53:46.418658 2024] [mpm_prefork:notice] [pid 10] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Fri Feb 23 11:53:46.418720 2024] [core:notice] [pid 10] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'

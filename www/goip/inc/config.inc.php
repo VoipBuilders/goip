@@ -1,10 +1,10 @@
 <?php 
-$dbhost='localhost';	//database server 
-$dbuser='goip';		//database username 
-$dbpw='goip';		//database password 
-$dbname='goip';		//database name
-$goipcronport='44444';  //goipcron port
-$goipdocker='localhost'; //goipcron ip
+$dbhost='172.30.0.11';
+$dbuser='goip';
+$dbpw='goip';
+$dbname='goip';
+$goipcronport='44444';
+$goipdocker='172.30.0.10';
 $charset='utf8';
 $endless_send=0;
 $re_ask_timer=3;

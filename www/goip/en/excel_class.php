@@ -9,7 +9,7 @@ define('ABC_DEBUG',         6);
 define('ABC_TRACE',         7);
 define('ABC_VAR_DUMP',      8);
 define('ABC_NO_LOG',      -1);
-$php_version = split( "\.", phpversion() );
+$php_version = explode( "\.", phpversion() );
 if( $php_version[0] == 4 && $php_version[1] <= 1 ) {
     if( !function_exists('var_export') ) {
         function var_export( $exp, $ret ) {

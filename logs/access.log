@@ -1,0 +1,8 @@
+192.168.0.71 - - [22/Feb/2024:14:53:55 +0000] "GET /smb/ HTTP/1.1" 200 1175 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+192.168.0.71 - - [22/Feb/2024:14:53:56 +0000] "GET /favicon.ico HTTP/1.1" 404 505 "http://192.168.0.47:8188/smb/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+192.168.0.71 - - [22/Feb/2024:14:53:59 +0000] "POST /smb/dologin.php HTTP/1.1" 302 368 "http://192.168.0.47:8188/smb/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+192.168.0.71 - - [22/Feb/2024:14:53:59 +0000] "GET /smb/en/index.php HTTP/1.1" 200 732 "http://192.168.0.47:8188/smb/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+192.168.0.71 - - [22/Feb/2024:14:53:59 +0000] "GET /smb/en/main.php HTTP/1.1" 200 914 "http://192.168.0.47:8188/smb/en/index.php" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+192.168.0.71 - - [22/Feb/2024:14:53:59 +0000] "GET /smb/en/left.php HTTP/1.1" 200 1847 "http://192.168.0.47:8188/smb/en/index.php" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+192.168.0.71 - - [22/Feb/2024:14:53:59 +0000] "GET /smb/en/top.php HTTP/1.1" 200 1227 "http://192.168.0.47:8188/smb/en/index.php" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"
+192.168.0.71 - - [22/Feb/2024:14:53:59 +0000] "GET /smb/en/top.php HTTP/1.1" 200 1226 "http://192.168.0.47:8188/smb/en/index.php" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0"

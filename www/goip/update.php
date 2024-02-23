@@ -389,9 +389,26 @@ ADD  `fixed_next_time` int(10) unsigned NOT NULL;");
 	@$db->updatequery("ALTER TABLE `receive` ADD `senttime` DATETIME NOT NULL");
 
 /*1.25 fixed bug of cron SMS and &$ in resend.php */
-	echo "update done! <a href=''  target=_top>Return</a>";
 /*1.25-t1 modify ussd timeout from 10 to 20s */
 /*1.25-t2 modify ussd timeout from 20 to 30s */
 /*1.25-t3 modify ussd timeout from 30 to 60s */
 /*1.26 change null to LOGOUT*/
+/*1.27-t1 fixed bug of EXPIRY*/
+/*1.27-t2 fixed bug of cron sms*/
+/*1.27 add json api*/
+	@$db->updatequery("ALTER TABLE `sends` ADD `sending_line` int(11) NOT NULL default '0'");
+	@$db->updatequery("ALTER TABLE `system` ADD `json_send_url` varchar(128) NOT NULL");
+	@$db->updatequery("ALTER TABLE `system` ADD `json_recv_url` varchar(128) NOT NULL");
+
+/*1.28 fixed bug of upload */
+/*1.28.2 add DIAL api */
+/*1.28.3 add CCFC api */
+/*1.28.4 add netselect api */
+/*1.28.6 add num in json api */
+/*1.29 fixed bug of reset time after recharge */
+/*1.29.1 fixed bug of reset time after SMS recharge */
+/*1.29.2 fixed bug of set_exp_time after SMS recharge */
+/*1.29.3 fixed bug of reset time after set_exp_time when SMS recharge */
+/*1.30.1 页面发送短信失败用其它线路重发只重发一次 */
+echo "update done! <a href=''  target=_top>Return</a>";
 ?>

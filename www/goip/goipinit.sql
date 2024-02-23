@@ -377,6 +377,7 @@ CREATE TABLE `sends` (
   `received` tinyint(1) NOT NULL,
   `sms_no` int(11) NOT NULL default '-1',
   `total` int(11) NOT NULL default '0',
+  `sending_line` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`),
   KEY `messageid` (`messageid`),
   KEY `over` (`over`),
@@ -384,6 +385,7 @@ CREATE TABLE `sends` (
   KEY `recvid` (`recvid`),
   KEY `sms_no` (`sms_no`),
   KEY `received` (`received`),
+  KEY `sending_line` (`sending_line`),
   CONSTRAINT `sends_ibfk_1` FOREIGN KEY (`messageid`) REFERENCES `message` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
@@ -429,7 +431,9 @@ CREATE TABLE `system` (
   `email_remain_count_enable` tinyint(1) NOT NULL default '0',
   `email_remain_count_d_enable` tinyint(1) NOT NULL default '0',
   `session_time` int(11) NOT NULL default '24',
-  `disable_status` tinyint(1) NOT NULL default '0'
+  `disable_status` tinyint(1) NOT NULL default '0',
+  `json_send_url` varchar(128) NOT NULL,
+  `json_recv_url` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -439,7 +443,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `system` WRITE;
 /*!40000 ALTER TABLE `system` DISABLE KEYS */;
-INSERT INTO `system` VALUES (70,'goipsms',3,119,'','','','',25,0,5,0,5,'',0,1,0,3,0,0,0,0,0,24,0);
+INSERT INTO `system` VALUES (70,'goipsms',3,119,'','','','',25,0,5,0,5,'',0,1,0,3,0,0,0,0,0,24,0,'','');
 
 /*!40000 ALTER TABLE `system` ENABLE KEYS */;
 UNLOCK TABLES;

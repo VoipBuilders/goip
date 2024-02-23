@@ -40,7 +40,7 @@ else {
 	$sysname=$_POST['sysname'];
 	$maxword=$_POST['maxword'];
 	$lan=$_POST['lan'];
-	$query=$db->query("UPDATE system SET sysname='$sysname',lan=$lan,send_page_jump_enable='$_POST[send_page_jump_enable]', session_time='$_POST[session_time]' where 1");
+	$query=$db->query("UPDATE system SET sysname='$sysname',lan=$lan,send_page_jump_enable='$_POST[send_page_jump_enable]', session_time='$_POST[session_time]',json_send_url='$_POST[json_send_url]',json_recv_url='$_POST[json_recv_url]' where 1");
 	
 	$session_time=$_POST[session_time]*60;
 	if($session_time<300) $session_time=300; 
@@ -77,7 +77,7 @@ function check()
 <form method="post" action="sys.php?action=save" name="myform" onSubmit="javascript:return check();">
   <br>
   <br>
-  <table wIdth="400" border="0" align="center" cellpadding="2" cellspacing="1" class="border" >
+  <table wIdth="600" border="0" align="center" cellpadding="2" cellspacing="1" class="border" >
     <tr class="title"> 
       <td height="22" colspan="2"> <div align="center"><strong>系统参数参数设定</strong></div></td>
     </tr>
@@ -110,6 +110,15 @@ function check()
       <td class="tdbg"><input name="disable_status" value="0" id="disable_status" type="radio" <?php echo $rs['disable_status']!='1'?'checked':''?>><span>启用</span>
               <input name="disable_status" value="1" id="enable_status" <?php echo $rs['disable_status']=='1'?'checked':''?> type="radio"><span>禁用</span>  </td>
     </tr>
+    <tr> 
+      <td wIdth="150" align="right" class="tdbg"><strong>json汇报短信发送结果的地址:</strong></td>
+      <td class="tdbg"><input type="input" name="json_send_url" value="<?php echo $rs[json_send_url] ?>"></td>
+    </tr>
+    <tr> 
+      <td wIdth="150" align="right" class="tdbg"><strong>json汇报短信接收信息的地址:</strong></td>
+      <td class="tdbg"><input type="input" name="json_recv_url" value="<?php echo $rs[json_recv_url] ?>"></td>
+    </tr>
+
 
 <!--
     <tr> 

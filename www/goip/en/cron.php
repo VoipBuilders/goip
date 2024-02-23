@@ -14,7 +14,7 @@ if($_GET['id'] && $_GET['action'] != "del") {
 	$row0=$db->fetch_array($db->query("select * from message where id=$_GET[id]"));
 	if($_SESSION['goip_permissions'] > 1 && $row0['userid']!=$_SESSION[goip_userid])
 		die("Permission denied!");
-	else $db->query("update message set over=3 where id=$_GET[id]");
+	else $db->query("update message set `over`=3 where id=$_GET[id]");
 
 	$query=$db->query("SELECT count(*) AS count FROM sends where messageid=$_GET[id]");
 	$row=$db->fetch_array($query);

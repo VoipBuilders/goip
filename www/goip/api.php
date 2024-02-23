@@ -40,7 +40,7 @@ $recvid=time()+$goiprow[id]*10000;
 
        
 $buf="START $recvid $goiprow[host] $goiprow[port]\n";
-if (@socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false){
+if (@socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false){
         echo ("ERROR:sendto error".socket_strerror($socket) . "\n");
         exit;   
 }          
@@ -66,13 +66,43 @@ if($i>=3) die("ERROR:Cannot get response from process named \"goipcron\"");
 if(isset($_REQUEST['value']))
         $_REQUEST['value']=' '.$_REQUEST['value'];
 $buf=$_REQUEST['cmd']." $recvid".$_REQUEST['value']." ".$goiprow[password];
+if($_REQUEST['cmd']=="DIAL") {
+	if(!$_REQUEST['num']) exit("ERROR:num");
+	if($_REQUEST['duration']<1 || $_REQUEST['duration']> 3600) exit("ERROR:duration must > 1 and <3600");
+	$buf=$_REQUEST['cmd']." $recvid ".$goiprow[password]." ".$_REQUEST['num']." ".$_REQUEST['duration'];
+}else if($_REQUEST['cmd']=="callforwading"){
+	//$sendbuf="CF ".$recvid." ".$goiprow[password]." ".$reason." ".$mode." ".$num." ".$ftime;
+	$buf="CF"." $recvid $goiprow[password]";
+	if(isset($_REQUEST['condition'])){
+		$buf.=" $_REQUEST[condition]";
+	}else {
+		die("ERROR not find condition!");
+	}
+	if($_REQUEST['switch']=="enable"){
+		$buf.=" 3";
+		if(!isset($_REQUEST["num"])) die("ERROR not find num");
+	}else if($_REQUEST['switch']=="disable"){
+		$buf.=" 4";
+	}else {
+		$buf.=" 2";
+	}
+	$buf.=" ".$_REQUEST["num"]." ".$_REQUEST["second"];
+	//echo $buf;
+}else if($_REQUEST['cmd']=="netselect"){
+	$buf="netselect"." $recvid $goiprow[password]";
+	if(isset($_REQUEST['switch'])){
+		$buf.=" $_REQUEST[switch]";
+	}else {
+		$buf.=" -1";
+	}
+}
 
 
-if (@socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
+if (@socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
         echo ("ERROR:sendto error");
 
 $socks[]=$socket;
-$timer=3;
+$timer=6;
 $timeout=5;
 
 for(;;){
@@ -85,7 +115,7 @@ for(;;){
 		echo "ERROR:send error";
 	elseif($err==0){ //全体超时
 		if(--$timer <= 0){
-			echo "ERROR:";
+			echo "ERROR:time out";
 			break;
 		}
 	}
@@ -104,10 +134,31 @@ for(;;){
 	}
 }
 $buf1="DONE $recvid";
-if (@socket_sendto($socket,$buf1, strlen($buf), 0, $goipdocker, $port)===false)
+if (@socket_sendto($socket,$buf1, strlen($buf), 0, "127.0.0.1", $port)===false)
         echo ("sendto error");
 
-if(strncmp($buf, "GSM", 3) && strncmp($buf, "ERROR", 5)){
+//返回数据
+if($_REQUEST['cmd']=="callforwading"){
+	if(!strncmp($buf, "CFERROR", 7)) die('ERROR:set failed');
+	else if(!strncmp($buf, "CFOK", 4)) die('OK');
+	else if(!strncmp($buf, "CFSTATE", 7)){
+		//"CFSTATE %d %d %s %d", cli->ussd->sendid, enable, num, time
+		//response: {"0":"10086","1":"off","2":"off","3":"off"}
+		sscanf($buf, "CFSTATE %*d %d %[^ ] %d", $mode, $num, $second);
+		if($mode==1)
+			die('{"'.$_REQUEST['condition'].'":"'.$num.'"}');
+		else die('{"'.$_REQUEST['condition'].'":"off"}');
+	}else die($buf);
+}else if($_REQUEST['cmd']=="netselect"){
+	//echo "$buf";
+	if(!strncmp($buf, "ERROR", 5)){
+		sscanf($buf, "%*[^ ] %*d %s", $error_msg);
+		die('{"netselect":"ERROR:'.$error_msg.'"}');
+	}else {
+		sscanf($buf, "%*[^ ] %*d %d", $switch);
+		die('{"netselect":"'.$switch.'"}');
+	}
+}else if(strncmp($buf, "GSM", 3) && strncmp($buf, "ERROR", 5)){
 	echo "OK";
 }
 else {
