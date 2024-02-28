@@ -120,7 +120,7 @@ if($_REQUEST['Submit']=="Recharge"){
 			for($i=0;$i<3;$i++){             
 				$read=array($socket);                               
 				$buf="START $recvid $ip $port\n";
-				if (@socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $sport)===false){
+				if (@socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $sport)===false){
 					$errormsg = "ERROR sendto error".socket_strerror($socket) . "\n";
 					echo $errormsg;
 					//error_over($_REQUEST[TERMID], $_REQUEST['USSDMSG'], $errormsg);                                       
@@ -152,7 +152,7 @@ if($_REQUEST['Submit']=="Recharge"){
 			$ussd_step=1;
 			$timer=2; 
 			$timeout=5;                                                                        
-			if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "127.0.0.1", $sport)===false)
+			if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, $goipdocker, $sport)===false)
 				echo ("ERROR sendto error");   
 			for(;;){
 				$read=$socks;                                                                                             
@@ -169,7 +169,7 @@ if($_REQUEST['Submit']=="Recharge"){
 						echo "line $row[name] $errormsg<br>";                    							
 						break;                                                                                    
 					}                                                                                                 
-					if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "127.0.0.1", $sport)===false)         
+					if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, $goipdocker, $sport)===false)         
 
 						echo ("ERROR sendto error");
 				}
@@ -195,7 +195,7 @@ if($_REQUEST['Submit']=="Recharge"){
 								$sendbuf="USSD ".$recvid." ".$password." ".$cmd;
 								$timer=2;
 								$ussd_step=2;
-								if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "127.0.0.1", $sport)===false)
+								if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, $goipdocker, $sport)===false)
 									echo ("ERROR sendto error");
 								continue;
 							}

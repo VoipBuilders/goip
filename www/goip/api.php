@@ -40,7 +40,7 @@ $recvid=time()+$goiprow[id]*10000;
 
        
 $buf="START $recvid $goiprow[host] $goiprow[port]\n";
-if (@socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false){
+if (@socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false){
         echo ("ERROR:sendto error".socket_strerror($socket) . "\n");
         exit;   
 }          
@@ -98,7 +98,7 @@ if($_REQUEST['cmd']=="DIAL") {
 }
 
 
-if (@socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+if (@socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
         echo ("ERROR:sendto error");
 
 $socks[]=$socket;
@@ -134,7 +134,7 @@ for(;;){
 	}
 }
 $buf1="DONE $recvid";
-if (@socket_sendto($socket,$buf1, strlen($buf), 0, "127.0.0.1", $port)===false)
+if (@socket_sendto($socket,$buf1, strlen($buf), 0, $goipdocker, $port)===false)
         echo ("sendto error");
 
 //返回数据

@@ -127,7 +127,7 @@ function ussd_send(&$send)
 			$buf="START $send[recvid] $send[host] $send[port]\n";
 			//echo $buf;
 			//echo $send[goipname];
-			if (@socket_sendto($send[socket],$buf, strlen($buf), 0, "127.0.0.1", $port)===false){
+			if (@socket_sendto($send[socket],$buf, strlen($buf), 0, $goipdocker, $port)===false){
 				$errormsg = "ERROR sendto error:".socket_strerror($socket) . "\n";
 				error_over($send[goipname], $send[cmd], $errormsg);
 			}
@@ -136,7 +136,7 @@ function ussd_send(&$send)
 			$buf="USSD $send[recvid] $send[password] $send[cmd]";
 			//echo $buf;
 			//echo $send[goipname];
-			if (@socket_sendto($send[socket],$buf, strlen($buf), 0, "127.0.0.1", $port)===false){
+			if (@socket_sendto($send[socket],$buf, strlen($buf), 0, $goipdocker, $port)===false){
 				$errormsg = "ERROR sendto error".socket_strerror($socket) . "\n";
 				error_over($send[goipname], $send[cmd], $errormsg);
 			}

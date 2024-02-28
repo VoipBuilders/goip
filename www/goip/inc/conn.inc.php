@@ -25,6 +25,7 @@ $dbuser1=$dbuser;
 $dbpw1=$dbpw;
 $dbname1=$dbname;
 */
+$goipcronport=$goipcronport;
 function myaddslashes($var)
 {
 	if(!get_magic_quotes_gpc())

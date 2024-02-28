@@ -91,7 +91,7 @@ if (($socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP)) <= 0) {
 for($i=0;$i<3;$i++){                                                                                              
         $read=array($socket);                                                                                     
         $buf="START $recvid $goiprow[host] $goiprow[port]\n";                                             
-        if (@socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false){                           
+        if (@socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false){                           
                 $errormsg = "ERROR sendto error".socket_strerror($socket) . "\n";
                 echo $errormsg;
                 error_over($_REQUEST[TERMID], $_REQUEST['USSDMSG'], $errormsg);                                       
@@ -145,7 +145,7 @@ else{
 $socks[]=$socket;                                                                                                 
 $timer=2;
 $timeout=60;                                                                                                      
-if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "127.0.0.1", $port)===false)                            
+if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, $goipdocker, $port)===false)                            
                 echo ("ERROR sendto error");                                                                      
 for(;;){
         $read=$socks;                                                                                             
@@ -161,7 +161,7 @@ for(;;){
                         $errormsg = "ERROR term no response";                                                
                         break;                                                                                    
                 }                                                                                                 
-                if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "127.0.0.1", $port)===false)         
+                if (@socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, $goipdocker, $port)===false)         
 
                         echo ("ERROR sendto error");
         }
@@ -217,7 +217,7 @@ if(!$debug && $errormsg) {
         
 }
 $buf1="DONE $recvid";
-if (@socket_sendto($socket,$buf1, strlen($buf1), 0, "127.0.0.1", $port)===false)
+if (@socket_sendto($socket,$buf1, strlen($buf1), 0, $goipdocker, $port)===false)
         echo ("sendto error");
 
 

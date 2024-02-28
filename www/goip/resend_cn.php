@@ -57,7 +57,7 @@ while($row=$db->fetch_assoc($query)) {
 
 		}	
 		//echo "<br> buf:$buf <br>";
-		if (@socket_sendto($goipsend[sock],$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+		if (@socket_sendto($goipsend[sock],$buf, strlen($buf), 0, $goipdocker, $port)===false)
 			echo ("sendto error");			
 	}
         function checkover($goipdb)
@@ -103,7 +103,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 				$goiprow['messageid']=$sendid+($goiprow[id] << 16)+$goiprow['time']%10000;
 				$goipdb[]=$goiprow;
 				$buf="START ".$goiprow['messageid']." $goiprow[host] $goiprow[port]\n";
-				if (@socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+				if (@socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
 					echo ("sendto error");
 				for($i=0;$i<3;$i++){
 					$read=array($socket);
@@ -125,7 +125,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 				if($i>=3)
 					die("goipcron 服务进程没有响应");				
 				$buf="MSG ".$goiprow['messageid']." $len $msg\n";
-				if (@socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+				if (@socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
 					echo ("sendto error");
 				$socks[]=$socket;
 			}
@@ -264,7 +264,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 								
 								$buf="SEND ".$goipdb[$the][messageid]." ".$goipdb[$the][tel][id]." ".$goipdb[$the][tel][telnum]."\n";
 								echo "SEND $goipnow[name] ".$goipdb[$the][messageid]." ".$goipdb[$the][telid]." ".$goipdb[$the][tel]."\n<br>";
-								if (socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+								if (socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
 									echo ("sendto error");
 								$goipdb[$the][timer]=3;
 							}
@@ -281,7 +281,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 										$goipdb[$the]['send']="SEND";
 										$buf="SEND ".$goipdb[$the][messageid]." ".$goipdb[$the][tel][id]." ".$goipdb[$the][tel][telnum]."\n";
 										echo "SEND $goipnow[name]".$goipdb[$the][messageid]." ".$goipdb[$the][telid]." ".$goipdb[$the][tel]."\n<br>";
-										if (socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+										if (socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
 											echo ("sendto error");
 										$goipdb[$the][timer]=3;									
 										break;
@@ -328,7 +328,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 							$goipdb[$the]['send']="SEND";
 							$buf="SEND ".$goipdb[$the][messageid]." ".$goipdb[$the][tel][id]." ".$goipdb[$the][tel][telnum]."\n";
 							echo $buf."<br>";
-							if (socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+							if (socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
 								echo ("sendto error");
 							$goipdb[$the][timer]=3;
 						}
@@ -344,7 +344,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 									$goipdb[$the]['send']="SEND";
 									$buf="SEND ".$goipdb[$the][messageid]." ".$goipdb[$the][tel][id]." ".$goipdb[$the][tel][telnum]."\n";
 									echo $buf."<br>";
-									if (socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+									if (socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
 										echo ("sendto error");
 									$goipdb[$the][timer]=3;									
 									break;
@@ -359,7 +359,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 						if($goipnow['send']!="PASSWORD" && $goipnow['send']!="MSG")//不是发送密码状态就不处理
 							continue;
 						
-						socket_sendto($socket,"PASSWORD $comm[1] $goipnow[password]\n", strlen("PASSWORD $comm[1] $goipnow[password]\n"), 0, "127.0.0.1", $port);
+						socket_sendto($socket,"PASSWORD $comm[1] $goipnow[password]\n", strlen("PASSWORD $comm[1] $goipnow[password]\n"), 0, $goipdocker, $port);
 						$goipdb[$the][send]="PASSWORD";
 						$goipdb[$the][timer]=3;					
 					}
@@ -396,7 +396,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 								$goipdb[$the]['send']="SEND";
 								$buf="SEND ".$goipdb[$the][messageid]." ".$goipdb[$the][tel][id]." ".$goipdb[$the][tel][telnum]."\n";
 								echo $buf."<br>";
-								if (socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+								if (socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
 									echo ("sendto error");
 								$goipdb[$the][timer]=3;
 							}
@@ -413,7 +413,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 										$goipdb[$the]['send']="SEND";
 										$buf="SEND ".$goipdb[$the][messageid]." ".$goipdb[$the][tel][id]." ".$goipdb[$the][tel][telnum]."\n";
 										echo $buf."<br>";
-										if (socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port)===false)
+										if (socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port)===false)
 											echo ("sendto error");
 										$goipdb[$the][timer]=3;									
 										break;
@@ -503,7 +503,7 @@ function startdo($db, $tels, $sendid, $msg, $len){
 			}
 			if($goipnow[sock]==$socket){
 				$buf="DONE ".$goipdb[$the][messageid]."\n";
-				socket_sendto($socket,$buf, strlen($buf), 0, "127.0.0.1", $port);
+				socket_sendto($socket,$buf, strlen($buf), 0, $goipdocker, $port);
 			}
 		}
 		//$i=0;

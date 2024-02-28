@@ -11,14 +11,16 @@ $URL=$_SERVER['HTTP_REFERER'];
 function sendto_cron($cmd="goip", $log=1)
 {
 	global $goipcronport;
+global $goipdocker;
+	global $goipdocker;
 	if(!$goipcronport) $goipcronport=44444;
 	$flag=0;        
 	if (($socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP)) <= 0) {
 		echo "socket_create() failed: reason: " . socket_strerror($socket) . "\n";
 		exit;           
 	}               
-	if (socket_sendto($socket,$cmd, strlen($cmd), 0, "127.0.0.1", $goipcronport)===false)
-		echo ("sendto error");
+	if (socket_sendto($socket,$cmd, strlen($cmd), 0, $goipdocker, $goipcronport)===false)
+		echo ("Some error");
 	for($i=0;$i<3;$i++){
 		$read=array($socket);
 		$err=socket_select($read, $write = NULL, $except = NULL, 5);
