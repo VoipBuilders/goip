@@ -172,3 +172,7 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Wed Feb 28 23:36:06.331779 2024] [:error] [pid 19] [client 192.168.0.71:52194] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/goip/en/resend.php on line 246, referer: http://192.168.0.47:8188/goip/en/dosend.php
 [Wed Feb 28 23:36:07.944988 2024] [:error] [pid 19] [client 192.168.0.71:52194] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/goip/en/sendinfo.htm on line 98, referer: http://192.168.0.47:8188/goip/en/resend.php?messageid=1&USERNAME=&PASSWORD=
 [Wed Feb 28 23:36:18.691887 2024] [:error] [pid 21] [client 192.168.0.71:52196] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/goip/en/sendinfo.htm on line 98, referer: http://192.168.0.47:8188/goip/en/sendinfo.php?userid=1
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.12. Set the 'ServerName' directive globally to suppress this message
+[Wed Mar 06 07:24:10.687067 2024] [core:warn] [pid 10] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Mar 06 07:24:10.689610 2024] [mpm_prefork:notice] [pid 10] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Wed Mar 06 07:24:10.689646 2024] [core:notice] [pid 10] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'

@@ -68,7 +68,7 @@ if(isset($_GET['action'])) {
 		}
 		$socks[]=$socket;
 		//echo "s:$sendbuf,".strlen($sendbuf);
-		if (socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "127.0.0.1", $phpsvrport)===false)
+		if (socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "$smbdocker", $phpsvrport)===false)
 			echo ("sendto error");
 		for($i=0;$i<2;$i++){
 			$read=array($socket);

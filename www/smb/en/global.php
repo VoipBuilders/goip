@@ -18,6 +18,7 @@ if(isset($_SERVER['HTTP_REFERER'])) $URL=$_SERVER['HTTP_REFERER'];
 function sendto_xchanged($send)
 {
         global $phpsvrport;
+global $smbdocker;
 	if(!$send) return;
         $flag=0;
         if (($socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP)) <= 0) {
@@ -26,7 +27,7 @@ function sendto_xchanged($send)
         }
         foreach($send as $sendbuf){
                 //echo "s:$sendbuf,".strlen($sendbuf)."<br>";
-                if (socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "127.0.0.1", $phpsvrport)===false){
+                if (socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "$smbdocker", $phpsvrport)===false){
                         echo ("sendto error");
 			exit;
 		}

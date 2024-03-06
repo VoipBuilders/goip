@@ -33,8 +33,8 @@ services:
    - ./distrib/sql/scheduler.sql:/scheduler.sql:ro
    - ./distrib/sql/goip.sql:/goip.sql:ro
      #   - ./distrib/sql/asterisk.sql:/asterisk.sql:ro
-  entrypoint: [ "/install.sh"]
-  # entrypoint: ["echo", "Service install disabled"]
+     #  entrypoint: [ "/install.sh"]
+  entrypoint: ["echo", "Service install disabled"]
 
  sms:
   depends_on:
@@ -85,8 +85,9 @@ services:
   ports:
    - ${SMB_SCHED_UDP}:${SMB_SCHED_UDP}/udp
    - ${SMB_SCHED_TCP}:${SMB_SCHED_TCP}/tcp
+   - ${XCHANGED_SMB_SCHED}:${XCHANGED_SMB_SCHED}/udp
   volumes:
-   - ./distrib/bin/smb_scheduler:/usr/local/bin/smb_scheduler:ro
+   - ./distrib/bin/smb_scheduler:/usr/local/bin/smb_scheduler:rw
    - ./distrib/script/smb_start.sh:/smb_start.sh:ro
   # tty: true
   # stdin_open: true
@@ -110,9 +111,9 @@ services:
    - ./.env
   working_dir: /
   restart: always
-  # ports:
-  #  - ${SMB_XCHANGE_SMBMSVR_UDP}:${SMB_XCHANGE_SMBMSVR_UDP}/udp
-  #  - ${SMB_XCHANGE_PHPSVR_UDP}:${SMB_XCHANGE_PHPSVR_UDP}/udp
+  ports:
+   - ${SMB_XCHANGE_SMBMSVR_UDP}:${SMB_XCHANGE_SMBMSVR_UDP}/udp
+   - ${SMB_XCHANGE_PHPSVR_UDP}:${SMB_XCHANGE_PHPSVR_UDP}/udp
   volumes:
 
    - ./distrib/bin/xchanged:/usr/local/bin/xchanged:ro
@@ -140,6 +141,7 @@ services:
   ports:
    - ${RADM_RADM_WEBPORT}:${RADM_RADM_WEBPORT}/tcp
    - ${RADM_CLIPORT}:${RADM_CLIPORT}/tcp
+   - ${RADM_PORTRANGE}:${RADM_PORTRANGE}/tcp
      # volumes:
      #- ./distrib/script/radm_start.sh:/radm_start.sh:ro
   tty: true

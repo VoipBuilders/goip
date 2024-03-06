@@ -13,6 +13,7 @@ require_once("global.php");
 function sendto_xchanged($send)
 {
 	global $phpsvrport;
+global $smbdocker;
 	//echo $phpsvrport;
 	//if(!$phpsvrport) $phpsvrport=44444;
 	$flag=0;
@@ -23,7 +24,7 @@ function sendto_xchanged($send)
 	}
 	foreach($send as $sendbuf){
 		//echo "s:$sendbuf,".strlen($sendbuf);
-		if (socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "127.0.0.1", $phpsvrport)===false)
+		if (socket_sendto($socket,$sendbuf, strlen($sendbuf), 0, "$smbdocker", $phpsvrport)===false)
 			echo ("sendto error");
 		for($i=0;$i<3;$i++){
 			$read=array($socket);
