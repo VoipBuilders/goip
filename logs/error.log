@@ -176,3 +176,6 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Wed Mar 06 07:24:10.687067 2024] [core:warn] [pid 10] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
 [Wed Mar 06 07:24:10.689610 2024] [mpm_prefork:notice] [pid 10] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
 [Wed Mar 06 07:24:10.689646 2024] [core:notice] [pid 10] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.12. Set the 'ServerName' directive globally to suppress this message
+[Wed Mar 06 09:44:02.442329 2024] [mpm_prefork:notice] [pid 12] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Wed Mar 06 09:44:02.443760 2024] [core:notice] [pid 12] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
