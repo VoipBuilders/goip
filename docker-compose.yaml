@@ -197,10 +197,11 @@ services:
    - ${WEB_EXT_PORT}:80/tcp
   volumes:
     #  - ./www:/mnt/www:ro
-   - ./www:/var/www/html:ro
+   - ./www:/var/www:ro
    - ./logs:/var/log/apache2:rw
    - ./distrib/script/web_start.sh:/web_start.sh:ro
-  image: athimel/apache2-php5-mysql
+     #image: athimel/apache2-php5-mysql
+  image: gruppometasrl/php56-apache-ubuntu
   entrypoint: ["/web_start.sh"]
 
     # asterisk:

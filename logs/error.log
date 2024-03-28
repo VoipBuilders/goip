@@ -206,3 +206,161 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.12. Set the 'ServerName' directive globally to suppress this message
 [Thu Mar 21 07:25:18.054490 2024] [mpm_prefork:notice] [pid 11] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
 [Thu Mar 21 07:25:18.054543 2024] [core:notice] [pid 11] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.12. Set the 'ServerName' directive globally to suppress this message
+[Thu Mar 28 23:47:58.840643 2024] [mpm_prefork:notice] [pid 11] AH00163: Apache/2.4.10 (Debian) configured -- resuming normal operations
+[Thu Mar 28 23:47:58.840714 2024] [core:notice] [pid 11] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.30.0.12. Set the 'ServerName' directive globally to suppress this message
+[Thu Mar 28 23:54:04.921764 2024] [mpm_prefork:notice] [pid 12] AH00163: Apache/2.4.7 (Ubuntu) configured -- resuming normal operations
+[Thu Mar 28 23:54:04.921823 2024] [core:notice] [pid 12] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Thu Mar 28 23:54:08.472396 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79
+[Thu Mar 28 23:54:08.472451 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Stack trace:
+[Thu Mar 28 23:54:08.472457 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   1. {main}() /var/www/smb/index.php:0
+[Thu Mar 28 23:54:08.472460 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   2. require_once() /var/www/smb/index.php:6
+[Thu Mar 28 23:54:08.472464 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   3. DB->DB() /var/www/smb/inc/conn.inc.php:114
+[Thu Mar 28 23:54:08.472467 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   4. mysql_connect() /var/www/smb/inc/conn.inc.php:79
+[Thu Mar 28 23:54:11.626720 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:11.626749 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:11.626753 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   1. {main}() /var/www/smb/dologin.php:0, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:11.626757 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   2. require_once() /var/www/smb/dologin.php:3, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:11.626797 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   3. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:11.626802 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   4. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:13.489535 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79
+[Thu Mar 28 23:54:13.489559 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Stack trace:
+[Thu Mar 28 23:54:13.489563 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   1. {main}() /var/www/smb/index.php:0
+[Thu Mar 28 23:54:13.489567 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   2. require_once() /var/www/smb/index.php:6
+[Thu Mar 28 23:54:13.489570 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   3. DB->DB() /var/www/smb/inc/conn.inc.php:114
+[Thu Mar 28 23:54:13.489573 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   4. mysql_connect() /var/www/smb/inc/conn.inc.php:79
+[Thu Mar 28 23:54:16.046707 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:16.046746 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:16.046751 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   1. {main}() /var/www/smb/dologin.php:0, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:16.046754 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   2. require_once() /var/www/smb/dologin.php:3, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:16.046758 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   3. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:16.046761 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   4. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:54:17.696433 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79
+[Thu Mar 28 23:54:17.696473 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP Stack trace:
+[Thu Mar 28 23:54:17.696477 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   1. {main}() /var/www/smb/index.php:0
+[Thu Mar 28 23:54:17.696480 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   2. require_once() /var/www/smb/index.php:6
+[Thu Mar 28 23:54:17.696484 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   3. DB->DB() /var/www/smb/inc/conn.inc.php:114
+[Thu Mar 28 23:54:17.696486 2024] [:error] [pid 14] [client 192.168.0.71:63456] PHP   4. mysql_connect() /var/www/smb/inc/conn.inc.php:79
+[Thu Mar 28 23:55:29.970433 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:55:29.970500 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:55:29.970505 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP   1. {main}() /var/www/smb/dologin.php:0, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:55:29.970509 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP   2. require_once() /var/www/smb/dologin.php:3, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:55:29.970523 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP   3. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:55:29.970526 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP   4. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:55:33.290033 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79
+[Thu Mar 28 23:55:33.290070 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP Stack trace:
+[Thu Mar 28 23:55:33.290075 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP   1. {main}() /var/www/smb/index.php:0
+[Thu Mar 28 23:55:33.290078 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP   2. require_once() /var/www/smb/index.php:6
+[Thu Mar 28 23:55:33.290081 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP   3. DB->DB() /var/www/smb/inc/conn.inc.php:114
+[Thu Mar 28 23:55:33.290084 2024] [:error] [pid 15] [client 192.168.0.71:63460] PHP   4. mysql_connect() /var/www/smb/inc/conn.inc.php:79
+[Thu Mar 28 23:56:02.421519 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:56:02.421557 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:56:02.421561 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/dologin.php:0, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:56:02.421565 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/dologin.php:3, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:56:02.421568 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:56:02.421571 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/
+[Thu Mar 28 23:56:02.635763 2024] [:error] [pid 17] [client 192.168.0.71:63468] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:02.635799 2024] [:error] [pid 17] [client 192.168.0.71:63468] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:02.635804 2024] [:error] [pid 17] [client 192.168.0.71:63468] PHP   1. {main}() /var/www/smb/en/top.php:0, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:02.635808 2024] [:error] [pid 17] [client 192.168.0.71:63468] PHP   2. require_once() /var/www/smb/en/top.php:8, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:02.635810 2024] [:error] [pid 17] [client 192.168.0.71:63468] PHP   3. require_once() /var/www/smb/global.php:5, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:02.635814 2024] [:error] [pid 17] [client 192.168.0.71:63468] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:02.635817 2024] [:error] [pid 17] [client 192.168.0.71:63468] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:03.055043 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:03.055076 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:03.055094 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/top.php:0, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:03.055256 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/top.php:8, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:03.055269 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/global.php:5, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:03.055273 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:03.055276 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:06.657841 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.657874 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.657879 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/rm_device.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.657883 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/rm_device.php:9, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.657885 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/en/global.php:5, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.657889 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.657891 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.664651 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Warning:  Invalid argument supplied for foreach() in /var/www/smb/en/rm_device.htm on line 107, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.664674 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.664679 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/rm_device.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.664682 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/rm_device.php:181, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:06.767145 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:06.767163 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:06.767167 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/top.php:0, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:06.767171 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/top.php:8, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:06.767173 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/global.php:5, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:06.767191 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:06.767194 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:08.191617 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.191642 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.191647 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/scheduler.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.191651 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/scheduler.php:8, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.191653 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/en/global.php:5, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.191657 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.191660 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.195261 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Warning:  Invalid argument supplied for foreach() in /var/www/smb/en/scheduler.htm on line 260, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.195285 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.195289 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/scheduler.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.195292 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/scheduler.php:261, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:08.309001 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:08.309094 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:08.309100 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/top.php:0, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:08.309103 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/top.php:8, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:08.309106 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/global.php:5, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:08.309109 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:08.309112 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:09.828003 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.828034 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.828039 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/human.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.828042 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/human.php:8, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.828044 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/en/global.php:5, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.828048 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.828051 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.830776 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Warning:  Invalid argument supplied for foreach() in /var/www/smb/en/human.htm on line 370, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.830801 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.830805 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/human.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.830809 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/human.php:352, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:09.937004 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:09.937025 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:09.937029 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/top.php:0, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:09.937032 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/top.php:8, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:09.937035 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/global.php:5, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:09.937038 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:09.937041 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:11.347250 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.347270 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.347275 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/imei_db.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.347278 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/imei_db.php:8, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.347290 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/en/global.php:5, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.347294 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.347297 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.349300 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Warning:  Invalid argument supplied for foreach() in /var/www/smb/en/imei_db.htm on line 124, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.349326 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.349330 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/imei_db.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.349333 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/imei_db.php:250, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:11.468423 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:11.468442 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:11.468447 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   1. {main}() /var/www/smb/en/top.php:0, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:11.468450 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   2. require_once() /var/www/smb/en/top.php:8, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:11.468453 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   3. require_once() /var/www/smb/global.php:5, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:11.468456 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:11.468459 2024] [:error] [pid 16] [client 192.168.0.71:63465] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:16.907438 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.907463 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.907468 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   1. {main}() /var/www/smb/en/sim_team.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.907471 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   2. require_once() /var/www/smb/en/sim_team.php:9, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.907474 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   3. require_once() /var/www/smb/en/global.php:5, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.907477 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.907480 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.909691 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP Warning:  Invalid argument supplied for foreach() in /var/www/smb/en/sim_team.htm on line 344, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.909729 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.909733 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   1. {main}() /var/www/smb/en/sim_team.php:0, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:16.909736 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   2. require_once() /var/www/smb/en/sim_team.php:632, referer: http://192.168.0.47:8188/smb/en/left.php
+[Thu Mar 28 23:56:17.015783 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /var/www/smb/inc/conn.inc.php on line 79, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:17.015803 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP Stack trace:, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:17.015808 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   1. {main}() /var/www/smb/en/top.php:0, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:17.015811 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   2. require_once() /var/www/smb/en/top.php:8, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:17.015814 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   3. require_once() /var/www/smb/global.php:5, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:17.015817 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   4. DB->DB() /var/www/smb/inc/conn.inc.php:114, referer: http://192.168.0.47:8188/smb/en/index.php
+[Thu Mar 28 23:56:17.015820 2024] [:error] [pid 18] [client 192.168.0.71:63473] PHP   5. mysql_connect() /var/www/smb/inc/conn.inc.php:79, referer: http://192.168.0.47:8188/smb/en/index.php
