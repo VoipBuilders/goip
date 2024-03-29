@@ -4,7 +4,7 @@
 Download project
 
 git clone --branch goip-no-aster https://github.com/VoipBuilders/goip.git
-cd ./goip
+&& cd ./goip
 
 edit (set variables):  
 ___docker-compose.yaml___  
